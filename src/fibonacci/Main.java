@@ -1,34 +1,34 @@
 package fibonacci;
 
-import static java.lang.System.currentTimeMillis;
+import static java.lang.System.nanoTime;
 
 public class Main {
 
-    final static int numberTimes = 20;
+    final static int numberTimes = 1000;
 
     public static void main(String[] args) {
         System.out.println("Starting DynamicProgramming");
-        long start = currentTimeMillis();
+        double start = nanoTime() * 1e-6;
         long res = DynamicProgramming.fibonacci(numberTimes);
-        long end = currentTimeMillis();
-        System.out.printf("The result was %d and the time was %d ms.\n", res, end-start);
+        double end = nanoTime() * 1e-6;
+        System.out.printf("The result was %d and the time was %.2f ms.\n", res, end-start);
 
-        System.out.println("Starting NaiveRecursive");
-        start = currentTimeMillis();
-        res = NaiveRecursive.fibonacci(numberTimes);
-        end = currentTimeMillis();
-        System.out.printf("The result was %d and the time was %d. ms\n", res, end-start);
+//        System.out.println("Starting NaiveRecursive");
+//        start = nanoTime() * 1e-6;
+//        res = NaiveRecursive.fibonacci(numberTimes);
+//        end = nanoTime() * 1e-6;
+//        System.out.printf("The result was %d and the time was %.2f ms.\n", res, end-start);
 
         System.out.println("Starting RecursiveSquaring");
-        start = currentTimeMillis();
+        start = nanoTime() * 1e-6;
         res = RecursiveSquaring.fibonacci(numberTimes);
-        end = currentTimeMillis();
-        System.out.printf("The result was %d and the time was %d. ms\n", res, end-start);
+        end = nanoTime() * 1e-6;
+        System.out.printf("The result was %d and the time was %.2f ms.\n", res, end-start);
 
         System.out.println("Starting DivideAndConquer");
-        start = currentTimeMillis();
+        start = nanoTime() * 1e-6;
         res = DivideAndConquer.fibonacci(numberTimes);
-        end = currentTimeMillis();
-        System.out.printf("The result was %d and the time was %d. ms\n", res, end-start);
+        end = nanoTime() * 1e-6;
+        System.out.printf("The result was %d and the time was %.2f ms.\n", res, end-start);
     }
 }
